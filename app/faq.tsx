@@ -31,10 +31,13 @@ const FAQS = () => {
       <AccordionTrigger> What services do you offer?</AccordionTrigger>
       <AccordionContent>
       <div>
-        <p className="text-lg"><strong className="text-lg">Lead Generation:</strong> Finding customers for your business.</p>
-        <p className="text-lg"><strong className="text-lg">Website Design & Development:</strong> Creating modern, responsive websites.</p>
-        <p className="text-lg"><strong className="text-lg">App Development:</strong> Building mobile apps for your needs.</p>
-        <p className="text-lg"><strong className="text-lg">Graphic Design:</strong> Designing logos, banners, and other visuals.</p>
+        <p className="text-sm"><strong className="text-sm">Lead Generation:</strong> Finding customers for your business.</p>
+        <br />
+        <p className="text-sm"><strong className="text-sm">Website Design & Development:</strong> Creating modern, responsive websites.</p>
+        <br />
+        <p className="text-sm"><strong className="text-sm">App Development:</strong> Building mobile apps for your needs.</p>
+        <br />
+        <p className="text-sm"><strong className="text-sm">Graphic Design:</strong> Designing logos, banners, and other visuals.</p>
       </div>
       </AccordionContent>
     </AccordionItem>

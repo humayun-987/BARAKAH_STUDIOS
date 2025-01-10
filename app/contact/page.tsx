@@ -176,7 +176,8 @@ export default function ContactForm() {
             space-y-4
             h-full
             border rounded-3xl p-10
-            md:w-1/3"
+            md:w-1/3*
+            mb-8"
             >
               <div className="md:flex items-center gap-6 ">
                 <FormField
