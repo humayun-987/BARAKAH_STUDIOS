@@ -14,10 +14,10 @@ const FAQS = () => {
         
         ">
           <div className=" p-10 md:p-4 md:px-20">
-            <div className="text-3xl md:text-7xl font-bold text-black">
+            <div className="text-2xl md:text-5xl font-bold text-black">
               Have questions ?
             </div>
-            <div className="  font-semibold text-3xl md:text-6xl text-gradient bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+            <div className="  font-semibold text-2xl md:text-4xl text-gradient bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
               Get answers.
             </div>
             <Accordion type="single" collapsible>
@@ -31,16 +31,16 @@ const FAQS = () => {
       <AccordionTrigger> What services do you offer?</AccordionTrigger>
       <AccordionContent>
       <div>
-  <p className="text-lg"><strong className="text-lg">Lead Generation:</strong> Finding customers for your business.</p>
-  <p className="text-lg"><strong className="text-lg">Website Design & Development:</strong> Creating modern, responsive websites.</p>
-  <p className="text-lg"><strong className="text-lg">App Development:</strong> Building mobile apps for your needs.</p>
-  <p className="text-lg"><strong className="text-lg">Graphic Design:</strong> Designing logos, banners, and other visuals.</p>
-</div>
+        <p className="text-lg"><strong className="text-lg">Lead Generation:</strong> Finding customers for your business.</p>
+        <p className="text-lg"><strong className="text-lg">Website Design & Development:</strong> Creating modern, responsive websites.</p>
+        <p className="text-lg"><strong className="text-lg">App Development:</strong> Building mobile apps for your needs.</p>
+        <p className="text-lg"><strong className="text-lg">Graphic Design:</strong> Designing logos, banners, and other visuals.</p>
+      </div>
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-3">
       <AccordionTrigger>
-      Why choose Barakah Studios?
+      Why Barakah Studios?
       </AccordionTrigger>
       <AccordionContent>
       We focus on quality and affordability. Our team works closely with you to meet your goals.
@@ -49,7 +49,7 @@ const FAQS = () => {
   
     <AccordionItem value="item-4">
       <AccordionTrigger>
-      Who can benefit from your services?
+      Who can benefit from us?
         </AccordionTrigger>
       <AccordionContent>
       We help startups, small businesses, and enterprises improve their online presence.
