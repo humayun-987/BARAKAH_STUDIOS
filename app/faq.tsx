@@ -22,28 +22,41 @@ const FAQS = () => {
             </div>
             <Accordion type="single" collapsible>
     <AccordionItem value="item-1">
-      <AccordionTrigger>What is Bird?</AccordionTrigger>
+      <AccordionTrigger>What is Barakah Studios?</AccordionTrigger>
       <AccordionContent>
-        Bird is a full fledge marketing agency that specializes in branding, web design, and digital marketing.
+      Barakah Studios is a digital marketing agency. We help businesses grow online.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-2">
-      <AccordionTrigger>How to start ?</AccordionTrigger>
+      <AccordionTrigger> What services do you offer?</AccordionTrigger>
       <AccordionContent>
-        You can start by contacting us. We will get back to you within 24 hours.
+      <div>
+  <p className="text-lg"><strong className="text-lg">Lead Generation:</strong> Finding customers for your business.</p>
+  <p className="text-lg"><strong className="text-lg">Website Design & Development:</strong> Creating modern, responsive websites.</p>
+  <p className="text-lg"><strong className="text-lg">App Development:</strong> Building mobile apps for your needs.</p>
+  <p className="text-lg"><strong className="text-lg">Graphic Design:</strong> Designing logos, banners, and other visuals.</p>
+</div>
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-3">
       <AccordionTrigger>
-    Pricing ?
+      Why choose Barakah Studios?
       </AccordionTrigger>
       <AccordionContent>
-        We offer custom tailored solutions for your business. Contact us to get a quote.
-        
+      We focus on quality and affordability. Our team works closely with you to meet your goals.
       </AccordionContent>
     </AccordionItem>
   
     <AccordionItem value="item-4">
+      <AccordionTrigger>
+      Who can benefit from your services?
+        </AccordionTrigger>
+      <AccordionContent>
+      We help startups, small businesses, and enterprises improve their online presence.
+      </AccordionContent>
+    </AccordionItem>
+  
+    <AccordionItem value="item-5">
       <AccordionTrigger>
     Support ?
         </AccordionTrigger>

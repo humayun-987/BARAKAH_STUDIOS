@@ -6,7 +6,7 @@ import SliderOne from "@/components/ui/slider";
 import { Spotlight } from "@/components/ui/spotlight";
 import Image from "next/image";
 import Link from "next/link";
-
+import SocialIcons from "@/components/socialMedia";
 import WebsiteDesign from "./website-design";
 import GraphicDesign from "./graphic-design";
 import ShopifyStores from "./shopify-stores";
@@ -80,7 +80,9 @@ export default function Home() {
         >
           Book a call
         </Link>
-
+        <div className="w-full flex justify-center">
+        <SocialIcons/>
+        </div>
         <div className="w-full pt-20">
           <SliderOne />
         </div>

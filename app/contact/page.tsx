@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import * as z from "zod";
-
+import SocialIcons from "@/components/socialMedia";
 import { Checkbox } from "@/components/ui/checkbox";
 
 import {
@@ -66,13 +66,13 @@ type FormValues = {
   email: string;
   job_title: string;
   company_name: string;
-  help: "Evaluate Bird for my company" | "Learn More" | "Get a Quote" | "Other";
+  help: "Learn More" | "Get a Quote" | "Other";
   services:
-    | "Mobile App Develoment"
-    | "Social Media Marketing"
-    | "UI/UX Design"
-    | "Branding"
-    | "Website Development";
+  | "Mobile App Develoment"
+  | "Social Media Marketing"
+  | "UI/UX Design"
+  | "Branding"
+  | "Website Development";
   info: string;
   terms: boolean;
 };
@@ -104,7 +104,7 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
+      // console.log(data);
       if (!res.ok) {
         throw new Error("Something went wrong");
       }
@@ -121,18 +121,18 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden ">
+    <div className=" w-full min-h-[100vh]  md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden ">
       <Navbar
-        scrollToWebsiteDesign={() => {}}
-        scrollToGraphicDesign={() => {}}
-        scrollToShopifyStores={() => {}}
-        scrollToBrands={() => {}}
-        scrollToServices={() => {}}
+        scrollToWebsiteDesign={() => { }}
+        scrollToGraphicDesign={() => { }}
+        scrollToShopifyStores={() => { }}
+        scrollToBrands={() => { }}
+        scrollToServices={() => { }}
       />
       <div className="md:flex items-start justify-center md:py-20 px-6">
         <div className="">
-          <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            Contact our sales team
+          <div className="text-4xl pt-4 font-medium  w-full  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+            Contact our team
           </div>
           <div
             className="
@@ -141,7 +141,7 @@ export default function ContactForm() {
               text-gray-300
                     "
           >
-            Let&apos;s talk about how Bird can help your team work better.
+            Let&apos;s discuss how we can help your brand grow and thrive.
           </div>
 
           <div className="bg-[#f6f5f4] md:w-4/5 space-y-6 p-4 rounded-2xl my-4 hidden md:flex md:flex-col">
@@ -165,6 +165,7 @@ export default function ContactForm() {
               </div>
             </div>
           </div>
+            <SocialIcons/>
         </div>
 
         <Form {...form}>
@@ -175,11 +176,7 @@ export default function ContactForm() {
             space-y-4
             h-full
             border rounded-3xl p-10
-            md:w-1/3
-            
-            
-                     
-                        "
+            md:w-1/3"
             >
               <div className="md:flex items-center gap-6 ">
                 <FormField
@@ -249,7 +246,7 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem className="items-center justify-center w-full">
                     <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                    Services you are interested in
+                      Services you are interested in
                     </FormLabel>
                     <Select
                       onValueChange={field.onChange}
@@ -263,7 +260,7 @@ export default function ContactForm() {
                       <SelectContent>
                         <div className="flex gap-4">
                           <SelectItem value="Mobile App Develoment">
-                          Mobile App Develoment
+                            Mobile App Develoment
                           </SelectItem>
                         </div>
                         <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
@@ -290,21 +287,15 @@ export default function ContactForm() {
                     >
                       <FormControl>
                         <SelectTrigger
-                        
-                        
+
+
                         >
                           <SelectValue placeholder="Select an option" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <div className="flex gap-4">
-                          <SelectItem value="Evaluate Bird for my company">
-                            Evaluate Bird for my company
-                          </SelectItem>
-                        </div>
                         <SelectItem value="Learn More">Learn More</SelectItem>
                         <SelectItem value="Get a Quote">Get a Quote</SelectItem>
-
                         <SelectItem value="Other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -340,8 +331,8 @@ export default function ContactForm() {
                   />
                 </div>
                 <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                  I agree to Bird&apos; sending marketing communications related
-                  to bird
+                  I agree to receive updates and offers from Barakah Studios
+                  related to digital marketing services.
                 </div>
               </div>
 
@@ -371,13 +362,8 @@ export default function ContactForm() {
         items-center
         justify-center
         flex-col
-        
-
- 
         px-8
-
-        "
-              >
+        ">
                 <div className="w-80 py-20">
                   <PiSmiley className="text-6xl text-[#6c6684] mx-auto" />
 
@@ -391,6 +377,7 @@ export default function ContactForm() {
           )}
         </Form>
       </div>
+      {/* <SocialIcons/> */}
     </div>
   );
 }
