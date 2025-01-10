@@ -168,41 +168,48 @@ const Navbar = ({
               className="w-10 h-10 md:w-14 md:h-14"
             />
           </Link>
-          {/* Display name for small screens */}
-          <h1 className="text-xl pl-4 pr-2 font-semibold text-gray-300 md:hidden">
-            BARAKAH STUDIOS
-          </h1>
+          <Link className="cursor-pointer" href="/"> 
+            {/* Display name for small screens */}
+            <h1 className="text-2xl pl-4 pr-2 font-bold text-gray-300 md:hidden">
+              BARAKAH STUDIOS
+            </h1>
+          </Link>
         </div>
 
         <div
-          className="cursor-pointer hidden 
-            md:flex space-x-10 items-center
-             text-slate-300 text-center 
-             bg-clip-text text-transparent 
-             bg-gradient-to-b from-neutral-50
-              to bg-neutral-400 bg-opacity-50"
-        >
-          <div onClick={scrollToWebsiteDesign} className="hover:text-gray-50">
-            Website Design
-          </div>
-          <div onClick={scrollToGraphicDesign} className="hover:text-gray-50">
-            Graphic Design
-          </div>
+            className="cursor-pointer hidden 
+              md:flex items-center justify-between md:gap-4 lg:gap-20 xl:gap-28
+              text-slate-300 text-center 
+              bg-clip-text text-transparent 
+              bg-gradient-to-b from-neutral-50
+              to bg-neutral-400 bg-opacity-50 mx-4"
+          >
+            <div className="flex md:hidden lg:flex lg:space-x-14">
+              <div onClick={scrollToWebsiteDesign} className="hover:text-gray-50">
+                Website Design
+              </div>
+              <div onClick={scrollToGraphicDesign} className="hover:text-gray-50">
+                Graphic Design
+              </div>
+            </div>
 
-          <h1 className="lg:text-2xl xl:text-4xl font-extrabold lg:px-8 xl:px-14">
-            BARAKAH STUDIOS
-          </h1>
-          <div onClick={scrollToShopifyStores} className="hover:text-gray-50">
-            Shopify Stores
-          </div>
-          <div onClick={scrollToBrands} className="hover:text-gray-50">
-            Brands
-          </div>
+            <h1 className="text-2xl md:text-4xl lg:text-3xl xl:text-5xl font-extrabold">
+              BARAKAH STUDIOS
+            </h1>
 
-          <Link href="/pricing" className="hover:text-gray-50">
-            Pricing
-          </Link>
+            <div className="flex md:hidden lg:flex lg:space-x-14">
+              {/* <div onClick={scrollToShopifyStores} className="hover:text-gray-50">
+                Shopify Stores
+              </div> */}
+              <div onClick={scrollToBrands} className="hover:text-gray-50">
+                Brands
+              </div>
+              <Link href="/pricing" className="hover:text-gray-50">
+                Pricing
+              </Link>
+            </div>
         </div>
+
 
         <div className="flex md:hidden">
           {isDropDownVisible ? (

@@ -92,9 +92,9 @@ export default function Home() {
         <div ref={graphicDesignRef}>
           <GraphicDesign />
         </div>
-        <div ref={shopifyStoresRef}>
+        {/* <div ref={shopifyStoresRef}>
           <ShopifyStores />
-        </div>
+        </div> */}
         <div ref={brandsRef}>
           <Brands />
         </div>

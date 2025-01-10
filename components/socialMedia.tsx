@@ -11,7 +11,7 @@ const SocialIcons: React.FC = () => {
   ];
 
   return (
-    <div className="w-auto flex items-center gap-6 md:gap-10 py-10 ">
+    <div className="w-auto flex items-center gap-6 md:gap-12 pt-4 pb-6 md:py-10 ">
       {socialLinks.map((icon, index) => (
         <Link key={index} className="cursor-pointer" href={icon.href}>
           <Image
@@ -20,7 +20,7 @@ const SocialIcons: React.FC = () => {
             alt={icon.alt}
             width={60}
             height={60}
-            className="w-8 h-8 md:w-10 md:h-10"
+            className="w-6 h-6 md:w-8 md:h-8"
           />
         </Link>
       ))}
