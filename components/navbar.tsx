@@ -170,7 +170,7 @@ const Navbar = ({
           </Link>
           <Link className="cursor-pointer" href="/"> 
             {/* Display name for small screens */}
-            <h1 className="text-2xl pl-1 pr-2 font-bold text-gray-300 md:hidden">
+            <h1 className="text-2xl pl-2 pr-2 font-bold text-gray-300 md:hidden">
               BARAKAH STUDIOS
             </h1>
           </Link>
