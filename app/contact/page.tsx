@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+import { db } from '../firebase'; 
+import { collection, addDoc } from 'firebase/firestore';
+import { serverTimestamp } from "firebase/firestore";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
@@ -44,8 +47,8 @@ const FormSchema = z.object({
   email: z.string().email(),
   job_title: z.string(),
   company_name: z.string(),
+  terms: z.boolean(),
   help: z.enum([
-    "Evaluate Bird for my company",
     "Learn More",
     "Get a Quote",
     "Other",
@@ -93,27 +96,49 @@ export default function ContactForm() {
       help: "Learn More",
       services: "Mobile App Develoment",
       info: "",
+      terms: false,
     },
   });
 
-  async function onSubmit(data: z.infer<typeof FormSchema>) {
+  // async function onSubmit(data: z.infer<typeof FormSchema>) {
+  //   try {
+  //     setLoading(true);
+  //     const res = await fetch("/api/contact", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(data),
+  //     });
+  //     // console.log(data);
+  //     if (!res.ok) {
+  //       throw new Error("Something went wrong");
+  //     }
+
+  //     setSubmitted(true);
+  //   } catch (error) {
+  //     toast({
+  //       title: "Error",
+  //       description: "Something went wrong",
+  //     });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
+  async function onSubmit(data: FormValues) {
     try {
       setLoading(true);
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      // console.log(data);
-      if (!res.ok) {
-        throw new Error("Something went wrong");
-      }
+      // Add the form data to the Firestore collection
+      await addDoc(collection(db, "contact form"), {data, createdAt: serverTimestamp(),});
 
+      // Mark the form as submitted
       setSubmitted(true);
+      toast({
+        title: "Success",
+        description: "Your response has been submitted!",
+      });
     } catch (error) {
       toast({
         title: "Error",
-        description: "Something went wrong",
+        description: "Failed to submit your response. Please try again.",
       });
     } finally {
       setLoading(false);
@@ -323,11 +348,11 @@ export default function ContactForm() {
                 <div>
                   <Checkbox
                     className="
-                outline
-                border-2
-                text-sm
-                font-light
-                bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
+                    border-2
+                    border-white
+                    text-sm
+                    font-semibold
+                    bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
                 "
                   />
                 </div>
