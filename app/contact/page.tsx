@@ -47,7 +47,9 @@ const FormSchema = z.object({
   email: z.string().email(),
   job_title: z.string(),
   company_name: z.string(),
-  terms: z.boolean(),
+  terms: z.boolean().refine((val) => val === true, {
+    message: "You must agree to the terms to submit the form.",
+  }),
   help: z.enum([
     "Learn More",
     "Get a Quote",
@@ -57,8 +59,10 @@ const FormSchema = z.object({
     "Mobile App Develoment",
     "Social Media Marketing",
     "UI/UX Design",
+    "Website Design",
     "Branding",
     "Website Development",
+    "Thumbnail design",
   ]),
   info: z.string(),
 });
@@ -74,8 +78,10 @@ type FormValues = {
   | "Mobile App Develoment"
   | "Social Media Marketing"
   | "UI/UX Design"
+  | "Website Design"
   | "Branding"
-  | "Website Development";
+  | "Website Development"
+  | "Thumbnail design";
   info: string;
   terms: boolean;
 };
@@ -266,7 +272,7 @@ export default function ContactForm() {
                 )}
               />
 
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="services"
                 render={({ field }) => (
@@ -285,19 +291,49 @@ export default function ContactForm() {
                       </FormControl>
                       <SelectContent>
                         <div className="flex gap-4">
-                          <SelectItem value="Mobile App Develoment">
-                            Mobile App Develoment
-                          </SelectItem>
+                          <SelectItem value="Mobile App Develoment">Mobile App Develoment</SelectItem>
                         </div>
                         <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
-                        <SelectItem value="51-200">51-200</SelectItem>
-                        <SelectItem value="501-1000">501-1000</SelectItem>
-                        <SelectItem value="1000+">1000+</SelectItem>
+                        <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                        <SelectItem value="Branding">Branding</SelectItem>
+                        <SelectItem value="Website Development">Website Development</SelectItem>
+                        <SelectItem value="Website Design">Website Design</SelectItem>
+                        <SelectItem value="Thumbnail Design">Thumbnail Design</SelectItem>
                       </SelectContent>
                     </Select>
                   </FormItem>
                 )}
-              />
+              /> */}
+<FormField
+  control={form.control}
+  name="services"
+  render={({ field }) => (
+    <FormItem className="items-center justify-center w-full">
+      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+        Services you are interested in
+      </FormLabel>
+      <Select
+        value={field.value} // Ensure value is bound to form field value
+        onValueChange={field.onChange} // Properly handle value changes
+      >
+        <FormControl>
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+        </FormControl>
+        <SelectContent>
+          <SelectItem value="Mobile App Develoment">Mobile App Develoment</SelectItem>
+          <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
+          <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+          <SelectItem value="Website Design">Website Design</SelectItem>
+          <SelectItem value="Branding">Branding</SelectItem>
+          <SelectItem value="Website Development">Website Development</SelectItem>
+          <SelectItem value="Thumbnail design">Thumbnail Design</SelectItem>
+        </SelectContent>
+      </Select>
+    </FormItem>
+  )}
+/>
 
               <FormField
                 control={form.control}
@@ -344,7 +380,7 @@ export default function ContactForm() {
                 )}
               />
 
-              <div className="flex gap-4 items-center">
+              {/* <div className="flex gap-4 items-center">
                 <div>
                   <Checkbox
                     className="
@@ -360,7 +396,44 @@ export default function ContactForm() {
                   I agree to receive updates and offers from Barakah Studios
                   related to digital marketing services.
                 </div>
-              </div>
+              </div> */}
+              <FormField
+                control={form.control}
+                name="terms"
+                render={({ field }) => (
+                  <FormItem className="items-center justify-center w-full">
+                    <FormControl>
+                      <div className="flex gap-4 items-center">
+                        <Checkbox
+                          checked={field.value}  // Bind the checked state to the form value
+                          onCheckedChange={(checked) => field.onChange(checked)}  // Handle state change
+                          className="
+                            border-2
+                            border-white
+                            text-sm
+                            font-semibold
+                            bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
+                          "
+                        />
+                        <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                          I agree to receive updates and offers from Barakah Studios
+                          related to digital marketing services.
+                        </div>
+                      </div>
+                    </FormControl>
+                    {/* <FormLabel className="text-xs font-light">
+                      I agree to receive updates and offers from Barakah Studios related to digital marketing services.
+                    </FormLabel> */}
+                    {form.formState.errors.terms && (
+                      <div className="text-red-500 text-sm">
+                        {form.formState.errors.terms.message}
+                      </div>
+                    )}
+
+                  </FormItem>
+                )}
+              />
+
 
               <div className="flex items-center gap-4">
                 <Button
