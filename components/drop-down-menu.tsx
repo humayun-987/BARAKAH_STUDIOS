@@ -20,7 +20,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose, scrollToServices }
      p-6
      space-y-4
      absolute
-     top-24
+     top-20
      left-0
      right-0
      z-50
@@ -31,20 +31,26 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose, scrollToServices }
       transition={{ duration: 0.5 }}
     >
       <div className="flex-col flex pl-2 space-y-10">
+
+        {/* <Link href="/book" className="text-white text-xl">
+          Book a call
+          </Link> */}
+
+        {/* Add onClick handler to Services link */}
+        <Link href='/#services'  className="cursor-pointer text-white text-xl">
+          Services
+        </Link>
+        <Link href='/#websiteDesign'  className="cursor-pointer text-white text-xl">
+          Website Designs
+        </Link>
+        <Link href='/#graphicDesign'  className="cursor-pointer text-white text-xl">
+          Graphic Designs
+        </Link>
         <Link href="/pricing" className="text-white text-xl">
           Pricing
         </Link>
         <Link href="/contact" className="text-white text-xl">
           Contact
-        </Link>
-
-        <Link href="/book" className="text-white text-xl">
-          Book a call
-        </Link>
-
-        {/* Add onClick handler to Services link */}
-        <Link href='/#services'  className="cursor-pointer text-white text-xl">
-          Services
         </Link>
       </div>
     </motion.div>

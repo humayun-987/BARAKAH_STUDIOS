@@ -81,15 +81,15 @@ export default function Home() {
           Book a call
         </Link>
         <div className="w-full flex justify-center">
-        <SocialIcons/>
+          <SocialIcons />
         </div>
         <div className="w-full pt-20">
           <SliderOne />
         </div>
-        <div ref={websiteDesignRef}>
+        <div id="websiteDesign" ref={websiteDesignRef}>
           <WebsiteDesign />
         </div>
-        <div ref={graphicDesignRef}>
+        <div id="graphicDesign" ref={graphicDesignRef}>
           <GraphicDesign />
         </div>
         {/* <div ref={shopifyStoresRef}>
@@ -98,8 +98,8 @@ export default function Home() {
         <div ref={brandsRef}>
           <Brands />
         </div>
-        <div id ='services'>
-        <Services />
+        <div id='services'>
+          <Services />
         </div>
         <InfiniteMovingCardsDemo />
         <FAQS />
