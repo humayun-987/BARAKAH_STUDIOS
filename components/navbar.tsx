@@ -34,16 +34,16 @@ const Navbar = ({
 
   return (
     <div>
-      <div className="p-6 md:p-10 flex items-center justify-between z-50">
+      <div className="p-2 md:p-6 md:pl-0 flex items-center justify-between z-50">
         <div className="flex items-center space-x-2">
           <Link className="cursor-pointer" href="/">
             <Image
               priority
-              src="/logo/logo.svg"
+              src="/logo/_74336074-0435-4a2b-9fc2-7cc0ec581822-removebg-preview.png"
               alt="Logo"
               width={100}
               height={100}
-              className="w-10 h-10 md:w-14 md:h-14"
+              className="w-16 h-16 md:w-26 md:h-26"
             />
           </Link>
           <Link className="cursor-pointer" href="/"> 
@@ -117,9 +117,7 @@ const Navbar = ({
             rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
             bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors
              focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
-              focus:ring-offset-slate-50
-
-            "
+              focus:ring-offset-slate-50"
           >
             Contact
           </Link>

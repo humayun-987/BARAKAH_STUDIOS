@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { db } from '../firebase'; 
+import { db } from '../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { serverTimestamp } from "firebase/firestore";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -133,7 +133,7 @@ export default function ContactForm() {
     try {
       setLoading(true);
       // Add the form data to the Firestore collection
-      await addDoc(collection(db, "contact form"), {data, createdAt: serverTimestamp(),});
+      await addDoc(collection(db, "contact form"), { data, createdAt: serverTimestamp(), });
 
       // Mark the form as submitted
       setSubmitted(true);
@@ -196,7 +196,7 @@ export default function ContactForm() {
               </div>
             </div>
           </div>
-            <SocialIcons/>
+          <SocialIcons />
         </div>
 
         <Form {...form}>
@@ -304,36 +304,36 @@ export default function ContactForm() {
                   </FormItem>
                 )}
               /> */}
-<FormField
-  control={form.control}
-  name="services"
-  render={({ field }) => (
-    <FormItem className="items-center justify-center w-full">
-      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-        Services you are interested in
-      </FormLabel>
-      <Select
-        value={field.value} // Ensure value is bound to form field value
-        onValueChange={field.onChange} // Properly handle value changes
-      >
-        <FormControl>
-          <SelectTrigger>
-            <SelectValue placeholder="Select an option" />
-          </SelectTrigger>
-        </FormControl>
-        <SelectContent>
-          <SelectItem value="Mobile App Develoment">Mobile App Develoment</SelectItem>
-          <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
-          <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
-          <SelectItem value="Website Design">Website Design</SelectItem>
-          <SelectItem value="Branding">Branding</SelectItem>
-          <SelectItem value="Website Development">Website Development</SelectItem>
-          <SelectItem value="Thumbnail design">Thumbnail Design</SelectItem>
-        </SelectContent>
-      </Select>
-    </FormItem>
-  )}
-/>
+              <FormField
+                control={form.control}
+                name="services"
+                render={({ field }) => (
+                  <FormItem className="items-center justify-center w-full">
+                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                      Services you are interested in
+                    </FormLabel>
+                    <Select
+                      value={field.value} // Ensure value is bound to form field value
+                      onValueChange={field.onChange} // Properly handle value changes
+                    >
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select an option" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="Mobile App Develoment">Mobile App Develoment</SelectItem>
+                        <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
+                        <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                        <SelectItem value="Website Design">Website Design</SelectItem>
+                        <SelectItem value="Branding">Branding</SelectItem>
+                        <SelectItem value="Website Development">Website Development</SelectItem>
+                        <SelectItem value="Thumbnail design">Thumbnail Design</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </FormItem>
+                )}
+              />
 
               <FormField
                 control={form.control}
